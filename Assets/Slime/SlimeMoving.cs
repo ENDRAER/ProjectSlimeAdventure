@@ -10,11 +10,11 @@ public class SlimeMoving : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.W))
             m_Animator.SetTrigger("MoveUp");
-        if (Input.GetKeyDown(KeyCode.A))
+        else if (Input.GetKeyDown(KeyCode.A))
             m_Animator.SetTrigger("MoveLeft");
-        if (Input.GetKeyDown(KeyCode.S))
+        else if (Input.GetKeyDown(KeyCode.S))
             m_Animator.SetTrigger("MoveDown");
-        if (Input.GetKeyDown(KeyCode.D))
+        else if (Input.GetKeyDown(KeyCode.D))
             m_Animator.SetTrigger("MoveRight");
     }
 
