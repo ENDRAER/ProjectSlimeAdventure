@@ -7,7 +7,6 @@ public class SlimeMoving : MonoBehaviour
     [SerializeField] private Animator m_Animator;
     [SerializeField] private GameObject m_MeshGO;
     [SerializeField] private FieldGrid fieldGrid;
-    [SerializeField] private Steps _Steps;
 
     void Update()
     {
@@ -31,8 +30,6 @@ public class SlimeMoving : MonoBehaviour
             m_Animator.SetTrigger("MoveRight");
             StartCoroutine(RotateToDirection(0));
         }
-        if(Input.GetKeyDown(KeyCode.Z))
-            StartCoroutine(_Steps.SizeChanger());
     }
 
     private IEnumerator RotateToDirection(float targetAngle)
