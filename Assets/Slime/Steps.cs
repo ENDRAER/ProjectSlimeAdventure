@@ -31,7 +31,7 @@ public class Steps : MonoBehaviour
         fieldGrid.MovingGrid[(int)transform.position.x + 50, (int)transform.position.z + 50].Clear();
         if (CurentSteps > 0)
             StartCoroutine(SizeChanger());
-        else
+        else 
             print("you die :(");
     }
 }
