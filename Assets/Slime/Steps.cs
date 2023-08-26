@@ -7,6 +7,7 @@ using UnityEngine;
 public class Steps : MonoBehaviour
 {
     [SerializeField] private GameObject m_MeshScalerGO;
+    [SerializeField] private GameObject FallParticles;
     [SerializeField] private FieldGrid fieldGrid;
     [NonSerialized] private float CurentSteps = 1;
     [NonSerialized] private int Speed = 10;
@@ -27,6 +28,7 @@ public class Steps : MonoBehaviour
 
     public void OnTouchCell()
     {
+        Instantiate(FallParticles, transform.position, Quaternion.identity);
         CurentSteps = (int)(new DataTable().Compute(CurentSteps.ToString() + fieldGrid.MovingGrid[(int)transform.position.x + 50, (int)transform.position.z + 50].calculatorChanged, "")) - 1;
         fieldGrid.MovingGrid[(int)transform.position.x + 50, (int)transform.position.z + 50].Clear();
         if (CurentSteps > 0)

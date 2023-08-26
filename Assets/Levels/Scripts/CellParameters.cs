@@ -8,10 +8,6 @@ public class CellParameters : MonoBehaviour
     [SerializeField] public string calculator;
     [NonSerialized] public string calculatorChanged;
 
-    private void Awake()
-    {
-        Restart();
-    }
 
     public void Clear() 
     {
@@ -19,7 +15,7 @@ public class CellParameters : MonoBehaviour
         m_Text.text = "";
     }
 
-    public void Restart() // Restart
+    public void Restart()
     {
         calculatorChanged = calculator;
         if (calculator != "")

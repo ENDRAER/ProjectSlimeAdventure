@@ -4,6 +4,14 @@ using UnityEngine;
 
 public class GameController : MonoBehaviour
 {
+    [SerializeField] private FieldGrid fieldGrid;
+
+    private void Awake()
+    {
+        
+    }
+
+
     public void OnSlimeDie()
     {
 
