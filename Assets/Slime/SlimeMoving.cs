@@ -1,12 +1,12 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class SlimeMoving : MonoBehaviour
 {
     [SerializeField] private FieldGrid fieldGrid;
     [SerializeField] private Animator m_Animator;
-    [SerializeField] private GameObject m_MeshGO;
+    [SerializeField] private GameObject m_AnimationGO;
+    [SerializeField] private GameObject m_ScalerGO;
     [SerializeField] private GameObject LandingParticles;
 
     void Update()
@@ -26,16 +26,16 @@ public class SlimeMoving : MonoBehaviour
 
     public IEnumerator RotateToDirection(float targetAngle)
     {
-        while (m_MeshGO.transform.eulerAngles.y != targetAngle)
+        while (m_ScalerGO.transform.eulerAngles.y != targetAngle)
         {
-            m_MeshGO.transform.rotation = Quaternion.RotateTowards(m_MeshGO.transform.rotation, Quaternion.Euler(new(0, targetAngle, 0)), 1000 * Time.deltaTime);
+            m_ScalerGO.transform.rotation = Quaternion.RotateTowards(m_ScalerGO.transform.rotation, Quaternion.Euler(new(0, targetAngle, 0)), 1000 * Time.deltaTime);
             yield return null;
         }
     }
 
     public void OnTouchCell()
     {
-        transform.position = m_MeshGO.transform.position;
+        transform.position = m_AnimationGO.transform.position;
         Instantiate(LandingParticles, transform.position, Quaternion.identity);
         fieldGrid.MovingGrid[(int)transform.position.x + 50, (int)transform.position.z + 50].GetComponent<CellParameters>().LandingBehaviour(gameObject);
     }

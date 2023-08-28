@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.4465794, g: 0.49641573, b: 0.57481736, a: 1}
+  m_IndirectSpecularColor: {r: 0.44402307, g: 0.49316692, b: 0.572231, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1108,7 +1108,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   fieldGrid: {fileID: 1378737872}
   m_Animator: {fileID: 2029303233}
-  m_MeshGO: {fileID: 790320641}
+  m_AnimationGO: {fileID: 790320641}
+  m_ScalerGO: {fileID: 2143963715}
   LandingParticles: {fileID: 8045703113324819198, guid: c11d421532a33c043a96d1df8ccf72da, type: 3}
 --- !u!114 &2029303239
 MonoBehaviour:
