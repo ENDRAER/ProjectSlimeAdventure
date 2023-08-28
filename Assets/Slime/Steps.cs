@@ -7,12 +7,10 @@ using UnityEngine;
 public class Steps : MonoBehaviour
 {
     [SerializeField] private GameObject m_MeshScalerGO;
-    [SerializeField] private GameObject LandingParticles;
-    [SerializeField] private FieldGrid fieldGrid;
-    [NonSerialized] private float CurentSteps = 1;
+    [NonSerialized] public float CurentSteps = 1;
     [NonSerialized] private int Speed = 10;
 
-    public IEnumerator SizeChanger()
+    public IEnumerator SizeChangerBySteps()
     {
         {
             float speedScaler = (0.15f + 0.05f * CurentSteps) - m_MeshScalerGO.transform.localScale.x;
@@ -24,10 +22,5 @@ public class Steps : MonoBehaviour
             }
             m_MeshScalerGO.transform.localScale = new(targetSize, targetSize, targetSize);
         }
-    }
-
-    public void OnTouchCell()
-    {
-        Instantiate(LandingParticles, transform.position, Quaternion.identity);
     }
 }

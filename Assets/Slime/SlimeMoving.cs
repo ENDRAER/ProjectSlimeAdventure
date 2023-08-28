@@ -4,10 +4,10 @@ using UnityEngine;
 
 public class SlimeMoving : MonoBehaviour
 {
-    [SerializeField] private Steps steps;
     [SerializeField] private FieldGrid fieldGrid;
     [SerializeField] private Animator m_Animator;
     [SerializeField] private GameObject m_MeshGO;
+    [SerializeField] private GameObject LandingParticles;
 
     void Update()
     {
@@ -33,9 +33,10 @@ public class SlimeMoving : MonoBehaviour
         }
     }
 
-    public void SetSlimePositionAsMeshPosition()
+    public void OnTouchCell()
     {
         transform.position = m_MeshGO.transform.position;
-        steps.OnTouchCell();
+        Instantiate(LandingParticles, transform.position, Quaternion.identity);
+        fieldGrid.MovingGrid[(int)transform.position.x + 50, (int)transform.position.z + 50].GetComponent<CellParameters>().LandingBehaviour(gameObject);
     }
 }

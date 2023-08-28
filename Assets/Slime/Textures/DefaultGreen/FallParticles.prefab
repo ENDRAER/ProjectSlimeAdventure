@@ -46,7 +46,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 48570e552d2fe1b4da4cabd2995558f6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  SecToDIe: 1.5
+  SecToDIe: 2
 --- !u!198 &9159013223991884319
 ParticleSystem:
   m_ObjectHideFlags: 0
@@ -3870,7 +3870,7 @@ ParticleSystem:
         m_RotationOrder: 4
     minKillSpeed: 0
     maxKillSpeed: 10000
-    radiusScale: 0.1
+    radiusScale: 0.03
     collidesWith:
       serializedVersion: 2
       m_Bits: 4294967295

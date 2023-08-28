@@ -11,7 +11,7 @@ public class CellCalculator : CellParameters
     [SerializeField] public string calculator;
     [NonSerialized] public string calculatorChanged;
 
-    public void Clear()
+    public void ClearText()
     {
         calculatorChanged = "";
         m_Text.text = "";
@@ -35,17 +35,18 @@ public class CellCalculator : CellParameters
             else
             {
                 Debug.LogError("WrongParameters in - " + gameObject.name);
-                Clear();
+                ClearText();
             }
         }
     }
 
-    public override void LandingBehaviour()
+    public override void LandingBehaviour(GameObject SlimeGO)
     {
-        CurentSteps = (int)(new DataTable().Compute(CurentSteps.ToString() + fieldGrid.MovingGrid[(int)transform.position.x + 50, (int)transform.position.z + 50].calculatorChanged, "")) - 1;
-        fieldGrid.MovingGrid[(int)transform.position.x + 50, (int)transform.position.z + 50].Clear();
-        if (CurentSteps > 0)
-            StartCoroutine(SizeChanger());
+        Steps steps = SlimeGO.GetComponent<Steps>();
+        steps.CurentSteps = Math.Max((int)(new DataTable().Compute(steps.CurentSteps.ToString() + calculatorChanged, "")) - 1, 0);
+        ClearText();
+        if (steps.CurentSteps > 0)
+            StartCoroutine(steps.SizeChangerBySteps());
         else
             print("you die :(");
     }
