@@ -15,7 +15,7 @@ public class GameController : MonoBehaviour
     public IEnumerator OnSlimeDie()
     {
         SlimeAnimator.SetTrigger("Die");
-        yield return new WaitForSeconds(0.07f);
+        yield return new WaitForSeconds(0.16666f);
         SlimeGO.transform.position = new(fieldGrid.AllCellsOnTheField[0].transform.position.x, SlimeGO.transform.position.y, fieldGrid.AllCellsOnTheField[0].transform.position.z);
     }
 }

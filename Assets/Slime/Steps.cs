@@ -4,9 +4,10 @@ using System;
 
 public class Steps : MonoBehaviour
 {
+    [SerializeField] public GameController gameController;
     [SerializeField] private GameObject m_MeshScalerGO;
     [NonSerialized] public float CurentSteps = 1;
-    [NonSerialized] private int Speed = 10;
+    [NonSerialized] private int Speed = 10; 
 
     public IEnumerator SizeChangerBySteps()
     {
@@ -18,5 +19,7 @@ public class Steps : MonoBehaviour
             m_MeshScalerGO.transform.localScale += new Vector3(Speed * speedScaler * Time.deltaTime, Speed * speedScaler * Time.deltaTime, Speed * speedScaler * Time.deltaTime);
         }
         m_MeshScalerGO.transform.localScale = new(targetSize, targetSize, targetSize);
+        if(CurentSteps == 0)
+            StartCoroutine(gameController.OnSlimeDie());
     }
 }

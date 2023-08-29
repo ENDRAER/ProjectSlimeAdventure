@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System;
 using UnityEditor;
 using UnityEngine;
+using UnityEditor.VersionControl;
 
 [CustomEditor(typeof(FieldGrid))]
 public class FieldGridButtons : Editor
@@ -33,5 +34,6 @@ public class FieldGridButtons : Editor
             grid.SortToGrid();
             grid.UpdateCellText();
         }
+        serializedObject.ApplyModifiedProperties();
     }
 }

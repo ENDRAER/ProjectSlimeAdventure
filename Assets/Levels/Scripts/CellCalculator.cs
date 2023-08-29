@@ -1,6 +1,4 @@
 using System;
-using System.Collections;
-using System.Collections.Generic;
 using System.Data;
 using TMPro;
 using UnityEngine;
@@ -45,9 +43,6 @@ public class CellCalculator : CellParameters
         Steps steps = SlimeGO.GetComponent<Steps>();
         steps.CurentSteps = Math.Max((int)(new DataTable().Compute(steps.CurentSteps.ToString() + calculatorChanged, "")) - 1, 0);
         ClearText();
-        if (steps.CurentSteps > 0)
-            StartCoroutine(steps.SizeChangerBySteps());
-        else
-            print("you die :(");
+        StartCoroutine(steps.SizeChangerBySteps());
     }
 }
