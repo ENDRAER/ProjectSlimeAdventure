@@ -32,11 +32,9 @@ public class FieldGridButtons : Editor
     {
         FieldGrid grid = (FieldGrid)target;
         grid.AllCellsOnTheField.Clear();
-        grid.MovingGrid = new GameObject[100, 100];
         foreach (Transform go in grid.transform)
         {
             grid.AllCellsOnTheField.Add(go.gameObject);
-            grid.MovingGrid[(int)go.transform.position.x + 50, (int)go.transform.position.z + 50] = go.gameObject;
         }
         PrefabUtility.RecordPrefabInstancePropertyModifications(grid);
         EditorSceneManager.SaveScene(SceneManager.GetActiveScene());

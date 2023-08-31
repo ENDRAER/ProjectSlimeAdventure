@@ -4,7 +4,7 @@ using UnityEngine;
 public class FieldGrid : MonoBehaviour
 {
     [SerializeField] public List<GameObject> AllCellsOnTheField = new List<GameObject>();
-    [SerializeField] public GameObject[,] MovingGrid;
+    [SerializeField] public GameObject[,] MovingGrid = new GameObject[100, 100];
 
     private void Awake()
     {
