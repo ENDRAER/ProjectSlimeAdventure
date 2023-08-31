@@ -6,7 +6,7 @@ using UnityEngine;
 public class CellCalculator : CellParameters
 {
     [SerializeField] private TextMeshPro m_Text;
-    [SerializeField] public string calculator;
+    [SerializeField][Delayed] public string calculator;
     [NonSerialized] public string calculatorChanged;
 
     public void ClearText()
@@ -37,6 +37,10 @@ public class CellCalculator : CellParameters
             }
         }
     }
+    private void OnValidate()
+    {
+        Restart();
+    }
 
     public override void LandingBehaviour(GameObject SlimeGO)
     {
@@ -45,4 +49,5 @@ public class CellCalculator : CellParameters
         ClearText();
         StartCoroutine(steps.SizeChangerBySteps());
     }
+
 }
