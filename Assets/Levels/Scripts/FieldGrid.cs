@@ -6,7 +6,7 @@ public class FieldGrid : MonoBehaviour
     [SerializeField] public List<GameObject> AllCellsOnTheField = new List<GameObject>();
     [SerializeField] public GameObject[,] MovingGrid = new GameObject[100, 100];
 
-    private void Awake()
+    public void Awake()
     {
         foreach (GameObject go in AllCellsOnTheField)
         {

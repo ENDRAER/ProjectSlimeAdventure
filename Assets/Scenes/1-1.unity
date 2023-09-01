@@ -355,7 +355,19 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 356246130964190600, guid: 0887452b5772d8a459d387eeea0f57ab, type: 3}
       propertyPath: m_text
-      value: ' '
+      value: -3
+      objectReference: {fileID: 0}
+    - target: {fileID: 356246130964190600, guid: 0887452b5772d8a459d387eeea0f57ab, type: 3}
+      propertyPath: m_fontColor.b
+      value: 0.207
+      objectReference: {fileID: 0}
+    - target: {fileID: 356246130964190600, guid: 0887452b5772d8a459d387eeea0f57ab, type: 3}
+      propertyPath: m_fontColor.g
+      value: 0.164
+      objectReference: {fileID: 0}
+    - target: {fileID: 356246130964190600, guid: 0887452b5772d8a459d387eeea0f57ab, type: 3}
+      propertyPath: m_fontColor.r
+      value: 0.811
       objectReference: {fileID: 0}
     - target: {fileID: 1461069503072415891, guid: 0887452b5772d8a459d387eeea0f57ab, type: 3}
       propertyPath: calculator
@@ -712,7 +724,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 356246130964190600, guid: 0887452b5772d8a459d387eeea0f57ab, type: 3}
       propertyPath: m_text
-      value: ' '
+      value: +2
       objectReference: {fileID: 0}
     - target: {fileID: 1461069503072415891, guid: 0887452b5772d8a459d387eeea0f57ab, type: 3}
       propertyPath: calculator
@@ -780,7 +792,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 356246130964190600, guid: 0887452b5772d8a459d387eeea0f57ab, type: 3}
       propertyPath: m_text
-      value: ' '
+      value: 
       objectReference: {fileID: 0}
     - target: {fileID: 3085332735301958155, guid: 0887452b5772d8a459d387eeea0f57ab, type: 3}
       propertyPath: m_Name
@@ -936,7 +948,7 @@ Transform:
   m_GameObject: {fileID: 963194225}
   serializedVersion: 2
   m_LocalRotation: {x: 0.46153307, y: 0.07723776, z: -0.04037893, w: 0.8828313}
-  m_LocalPosition: {x: -1.786, y: 19.856, z: -13.278}
+  m_LocalPosition: {x: -2.11, y: 19.856, z: -13.278}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -954,7 +966,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0de36ac1e1c15904abea5fb50d027d27, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  fieldGrid: {fileID: 0}
+  fieldGrid: {fileID: 1463611153}
   SlimeGO: {fileID: 2029303231}
   SlimeAnimator: {fileID: 2029303233}
 --- !u!1 &1224091969 stripped
@@ -1073,7 +1085,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 356246130964190600, guid: 0887452b5772d8a459d387eeea0f57ab, type: 3}
       propertyPath: m_text
-      value: ' '
+      value: 
       objectReference: {fileID: 0}
     - target: {fileID: 3085332735301958155, guid: 0887452b5772d8a459d387eeea0f57ab, type: 3}
       propertyPath: m_Name
@@ -1381,7 +1393,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 356246130964190600, guid: 0887452b5772d8a459d387eeea0f57ab, type: 3}
       propertyPath: m_text
-      value: ' '
+      value: 
       objectReference: {fileID: 0}
     - target: {fileID: 3085332735301958155, guid: 0887452b5772d8a459d387eeea0f57ab, type: 3}
       propertyPath: m_Name

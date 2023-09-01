@@ -6,6 +6,7 @@ using UnityEngine;
 public class CellCalculator : CellParameters
 {
     [SerializeField] private TextMeshPro m_Text;
+    [SerializeField] private Animator m_Animator;
     [SerializeField][Delayed] public string calculator;
     [NonSerialized] public string calculatorChanged;
 
@@ -20,6 +21,8 @@ public class CellCalculator : CellParameters
         calculatorChanged = calculator;
         if (calculator != "")
         {
+            if (m_Text.text != calculator)
+                m_Animator.SetTrigger("Restart");
             if (calculator.Substring(0, 1) == "+" || calculator.Substring(0, 1) == "*")
             {
                 m_Text.text = calculator;
@@ -36,6 +39,8 @@ public class CellCalculator : CellParameters
                 ClearText();
             }
         }
+        else
+            m_Text.text = "";
     }
     private void OnValidate()
     {

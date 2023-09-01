@@ -6,7 +6,7 @@ public class SlimeMoving : MonoBehaviour
     [SerializeField] private FieldGrid fieldGrid;
     [SerializeField] private Animator m_Animator;
     [SerializeField] private GameObject m_AnimationGO;
-    [SerializeField] private GameObject m_ScalerGO;
+    [SerializeField] public GameObject m_ScalerGO;
     [SerializeField] private GameObject LandingParticles;
 
     void Update()
