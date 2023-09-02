@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using UnityEngine;
 
@@ -7,7 +8,6 @@ public class SlimeMoving : MonoBehaviour
     [SerializeField] private Animator m_Animator;
     [SerializeField] private GameObject m_AnimationGO;
     [SerializeField] public GameObject m_ScalerGO;
-    [SerializeField] private GameObject LandingParticles;
 
     void Update()
     {
@@ -35,8 +35,7 @@ public class SlimeMoving : MonoBehaviour
 
     public void OnTouchCell()
     {
-        transform.position = m_AnimationGO.transform.position;
-        Instantiate(LandingParticles, transform.position, Quaternion.identity);
+        transform.position = new Vector3((float)Math.Round(m_AnimationGO.transform.position.x, 0), 0, (float)Math.Round(m_AnimationGO.transform.position.z, 0));
         fieldGrid.MovingGrid[(int)transform.position.x + 50, (int)transform.position.z + 50].GetComponent<CellParameters>().LandingBehaviour(gameObject);
     }
 }
