@@ -8,15 +8,6 @@
         },
         {
             "m_Id": "a1a9c1c096ac469ab2b8c5a7ea1e7fcd"
-        },
-        {
-            "m_Id": "661ca00991bc4fe5a9769a2d6c1903f2"
-        },
-        {
-            "m_Id": "6f4596132a34439eb3e4574256d9874b"
-        },
-        {
-            "m_Id": "58783a78c4234088bf6611bc137984ef"
         }
     ],
     "m_Keywords": [],
@@ -582,15 +573,6 @@
         },
         {
             "m_Id": "a1a9c1c096ac469ab2b8c5a7ea1e7fcd"
-        },
-        {
-            "m_Id": "661ca00991bc4fe5a9769a2d6c1903f2"
-        },
-        {
-            "m_Id": "6f4596132a34439eb3e4574256d9874b"
-        },
-        {
-            "m_Id": "58783a78c4234088bf6611bc137984ef"
         }
     ]
 }
@@ -644,36 +626,6 @@
 
 {
     "m_SGVersion": 0,
-    "m_Type": "UnityEditor.ShaderGraph.Internal.Texture2DShaderProperty",
-    "m_ObjectId": "58783a78c4234088bf6611bc137984ef",
-    "m_Guid": {
-        "m_GuidSerialized": "dd2f48b4-3bea-43a1-b95c-df3af098b045"
-    },
-    "m_Name": "ShadingRamp",
-    "m_DefaultRefNameVersion": 1,
-    "m_RefNameGeneratedByDisplayName": "ShadingRamp",
-    "m_DefaultReferenceName": "_ShadingRamp",
-    "m_OverrideReferenceName": "",
-    "m_GeneratePropertyBlock": true,
-    "m_UseCustomSlotLabel": false,
-    "m_CustomSlotLabel": "",
-    "m_DismissedVersion": 0,
-    "m_Precision": 0,
-    "overrideHLSLDeclaration": false,
-    "hlslDeclarationOverride": 0,
-    "m_Hidden": false,
-    "m_Value": {
-        "m_SerializedTexture": "{\"texture\":{\"instanceID\":0}}",
-        "m_Guid": ""
-    },
-    "isMainTexture": false,
-    "useTilingAndOffset": false,
-    "m_Modifiable": true,
-    "m_DefaultType": 0
-}
-
-{
-    "m_SGVersion": 0,
     "m_Type": "UnityEditor.ShaderGraph.BlockNode",
     "m_ObjectId": "65b630829bdd42569bf91e50998eefd7",
     "m_Group": {
@@ -704,66 +656,6 @@
         "m_SerializableColors": []
     },
     "m_SerializedDescriptor": "SurfaceDescription.BaseColor"
-}
-
-{
-    "m_SGVersion": 3,
-    "m_Type": "UnityEditor.ShaderGraph.Internal.ColorShaderProperty",
-    "m_ObjectId": "661ca00991bc4fe5a9769a2d6c1903f2",
-    "m_Guid": {
-        "m_GuidSerialized": "4840b009-946b-470b-8897-1741786392ee"
-    },
-    "m_Name": "DarkColor",
-    "m_DefaultRefNameVersion": 1,
-    "m_RefNameGeneratedByDisplayName": "DarkColor",
-    "m_DefaultReferenceName": "_DarkColor",
-    "m_OverrideReferenceName": "",
-    "m_GeneratePropertyBlock": true,
-    "m_UseCustomSlotLabel": false,
-    "m_CustomSlotLabel": "",
-    "m_DismissedVersion": 0,
-    "m_Precision": 0,
-    "overrideHLSLDeclaration": false,
-    "hlslDeclarationOverride": 0,
-    "m_Hidden": false,
-    "m_Value": {
-        "r": 0.0,
-        "g": 0.0,
-        "b": 0.0,
-        "a": 0.0
-    },
-    "isMainColor": false,
-    "m_ColorMode": 0
-}
-
-{
-    "m_SGVersion": 3,
-    "m_Type": "UnityEditor.ShaderGraph.Internal.ColorShaderProperty",
-    "m_ObjectId": "6f4596132a34439eb3e4574256d9874b",
-    "m_Guid": {
-        "m_GuidSerialized": "6bb39278-ba14-4c5f-acd4-91f7bbcbb104"
-    },
-    "m_Name": "LitColor",
-    "m_DefaultRefNameVersion": 1,
-    "m_RefNameGeneratedByDisplayName": "LitColor",
-    "m_DefaultReferenceName": "_LitColor",
-    "m_OverrideReferenceName": "",
-    "m_GeneratePropertyBlock": true,
-    "m_UseCustomSlotLabel": false,
-    "m_CustomSlotLabel": "",
-    "m_DismissedVersion": 0,
-    "m_Precision": 0,
-    "overrideHLSLDeclaration": false,
-    "hlslDeclarationOverride": 0,
-    "m_Hidden": false,
-    "m_Value": {
-        "r": 0.0,
-        "g": 0.0,
-        "b": 0.0,
-        "a": 0.0
-    },
-    "isMainColor": false,
-    "m_ColorMode": 0
 }
 
 {
