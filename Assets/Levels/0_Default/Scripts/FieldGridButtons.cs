@@ -1,3 +1,4 @@
+#if UNITY_EDITOR
 using System;
 using UnityEditor;
 using UnityEngine;
@@ -52,3 +53,4 @@ public class FieldGridButtons : Editor
         EditorSceneManager.SaveScene(SceneManager.GetActiveScene());
     }
 }
+#endif
