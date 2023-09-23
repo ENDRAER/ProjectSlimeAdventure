@@ -5,9 +5,12 @@ using UnityEngine;
 
 public class CellCalculator : CellParameters
 {
+    [SerializeField][Delayed] public string calculator;
+    [Space]
+    [SerializeField] public Color BadColor;
+    [SerializeField] public Color GoodColor;
     [SerializeField] private TextMeshPro m_Text;
     [SerializeField] private Animator m_Animator;
-    [SerializeField][Delayed] public string calculator;
     [NonSerialized] public string calculatorChanged;
 
     public void ClearText()
@@ -26,12 +29,12 @@ public class CellCalculator : CellParameters
             if (calculator.Substring(0, 1) == "+" || calculator.Substring(0, 1) == "*")
             {
                 m_Text.text = calculator;
-                m_Text.color = new Color(0.529f, 1.000f, 0.364f);
+                m_Text.color = GoodColor;
             }
             else if (calculator.Substring(0, 1) == "-" || calculator.Substring(0, 1) == "/")
             {
                 m_Text.text = calculator;
-                m_Text.color = new Color(0.811f, 0.164f, 0.207f);
+                m_Text.color = BadColor;
             }
             else
             {
