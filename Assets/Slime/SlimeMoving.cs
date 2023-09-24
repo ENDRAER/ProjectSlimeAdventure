@@ -23,7 +23,8 @@ public class SlimeMoving : MonoBehaviour
                 if (Input.touches[0].phase == TouchPhase.Ended)
                 {
                     float Angle = Mathf.Atan2(Input.touches[0].position.x - StartTouchPos.x, Input.touches[0].position.y - StartTouchPos.y) * Mathf.Rad2Deg;
-                    print(Angle);
+                    m_Animator.SetFloat("MoveX", Input.GetAxis("Horizontal"));
+                    m_Animator.SetFloat("MoveY", Input.GetAxis("Vertical"));
                 }
             }
 
