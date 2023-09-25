@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using UnityEngine;
+using static UnityEditor.Searcher.SearcherWindow.Alignment;
 
 public class SlimeMoving : MonoBehaviour
 {
@@ -22,17 +23,33 @@ public class SlimeMoving : MonoBehaviour
                 }
                 if (Input.touches[0].phase == TouchPhase.Ended)
                 {
-                    float Angle = Mathf.Atan2(Input.touches[0].position.x - StartTouchPos.x, Input.touches[0].position.y - StartTouchPos.y) * Mathf.Rad2Deg;
-                    m_Animator.SetFloat("MoveX", Input.GetAxis("Horizontal"));
-                    m_Animator.SetFloat("MoveY", Input.GetAxis("Vertical"));
+                    float angle = Mathf.Atan2(Input.touches[0].position.x - StartTouchPos.x, Input.touches[0].position.y - StartTouchPos.y) * Mathf.Rad2Deg;
+                    switch (angle) 
+                    {
+                        case >= 0 and <= 5:
+                            m_Animator.SetFloat("MoveY", 1);
+                            break;
+                        case > 5 and <= 95:
+                            m_Animator.SetFloat("MoveX", 1);
+                            break;
+                        case > 95 and <= 185:
+                            m_Animator.SetFloat("MoveY", -1);
+                            break;
+                        case > 185 and <= 275:
+                            m_Animator.SetFloat("MoveX", -1);
+                            break;
+                        case > 275 and <= 360:
+                            m_Animator.SetFloat("MoveY", 1);
+                            break;
+                    }
                 }
             }
 
-            if ((Input.GetAxis("Horizontal") == -1 || Input.GetAxis("Horizontal") == 1 || Input.GetAxis("Vertical") == -1 || Input.GetAxis("Vertical") == 1) 
-                && fieldGrid.MovingGrid[(int)transform.position.x + 50 + (int)Input.GetAxis("Horizontal"), (int)transform.position.z + 50 + (int)Input.GetAxis("Vertical")] != null)
+            if ((Math.Abs(Input.GetAxisRaw("Horizontal")) == 1 || Math.Abs(Input.GetAxisRaw("Vertical")) == 1) 
+                && fieldGrid.MovingGrid[(int)transform.position.x + 50 + (int)Input.GetAxisRaw("Horizontal"), (int)transform.position.z + 50 + (int)Input.GetAxisRaw("Vertical")] != null)
             {
-                m_Animator.SetFloat("MoveX", Input.GetAxis("Horizontal"));
-                m_Animator.SetFloat("MoveY", Input.GetAxis("Vertical"));
+                m_Animator.SetFloat("MoveX", Input.GetAxisRaw("Horizontal"));
+                m_Animator.SetFloat("MoveY", Input.GetAxisRaw("Vertical"));
             }
         }
     }

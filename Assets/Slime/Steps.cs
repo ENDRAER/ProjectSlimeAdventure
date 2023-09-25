@@ -11,16 +11,18 @@ public class Steps : MonoBehaviour
     [NonSerialized] private float MinScale = 0.1f;
     [NonSerialized] private float MaxScale = 0.4f;
     [NonSerialized] private float ScaleMod = 0.05f;
-    [NonSerialized] private float ScaleParticleMod = 0.02f;
-    [NonSerialized] private int Speed = 10; 
+    [NonSerialized] private float MinParticleScale = 0.1f;
+    [NonSerialized] private float MaxParticleScale = 0.2f;
+    [NonSerialized] private float ScaleParticleMod = 0.02f; 
+    [NonSerialized] private int Speed = 10;
 
     public IEnumerator SizeChangerBySteps()
     {
         GameObject Particles = Instantiate(LandingParticles, transform.position, Quaternion.identity);
-        Particles.transform.localScale = (Vector3.one * 0.1f) + (Vector3.one * CurentSteps * ScaleParticleMod);
+        Particles.transform.localScale = (Vector3.one * MinParticleScale) + (Vector3.one * Mathf.Min(CurentSteps * ScaleParticleMod, MaxParticleScale));
 
         float speedScaler = ((MinScale - ScaleMod) + ScaleMod * CurentSteps) - m_MeshScalerGO.transform.localScale.x;
-        float targetSize = Mathf.Clamp(m_MeshScalerGO.transform.localScale.x + speedScaler, MinScale, MaxScale);
+        float targetSize = Mathf.Min(m_MeshScalerGO.transform.localScale.x + speedScaler, MaxScale);
 
         while ((m_MeshScalerGO.transform.localScale.x > targetSize && speedScaler < 0) || (m_MeshScalerGO.transform.localScale.x < targetSize && speedScaler > 0))
         {
