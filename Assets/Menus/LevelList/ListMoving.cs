@@ -6,8 +6,9 @@ public class ListMoving : MonoBehaviour
 {
     [SerializeField] private Rigidbody m_RB;
     [SerializeField] private GameObject[] LevelsGO;
+    [SerializeField] private ListSlimeMoving listSlimeMoving;
     [NonSerialized] private Vector2 previousTouchPos;
-    [NonSerialized] private int CurentSelectedLevel;
+    [NonSerialized] private int CurentSelectedLevel = 1;
     [NonSerialized] private bool ScrollKD;
     [NonSerialized] private Coroutine SliceCor;
     [NonSerialized] private float ScrollingSmootness = 0.4f;
@@ -53,7 +54,8 @@ public class ListMoving : MonoBehaviour
 
     private IEnumerator ScrollToSelectedLevelIE()
     {
-        SliceCor = StartCoroutine(ScrollKD_IE());
+        StartCoroutine(ScrollKD_IE());
+        StartCoroutine(listSlimeMoving.SlimeTranslate(LevelsGO[CurentSelectedLevel].transform.position));
         while (Math.Abs(-2 + LevelsGO[CurentSelectedLevel].transform.position.x - transform.position.x) > 0.1) 
         {
             transform.position += new Vector3((-2 + LevelsGO[CurentSelectedLevel].transform.position.x - transform.position.x) * ScrollingSmootness * ScrollingSpeed * Time.deltaTime, 0, 0);

@@ -109,7 +109,7 @@ MonoBehaviour:
   m_fontColor32:
     serializedVersion: 2
     rgba: 4278255395
-  m_fontColor: {r: 0.13725495, g: 1, b: 0, a: 1}
+  m_fontColor: {r: 0.13750005, g: 1, b: 0, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -198,10 +198,6 @@ PrefabInstance:
     - target: {fileID: 1461069503072415891, guid: 0887452b5772d8a459d387eeea0f57ab, type: 3}
       propertyPath: BadColor.r
       value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1461069503072415891, guid: 0887452b5772d8a459d387eeea0f57ab, type: 3}
-      propertyPath: calculator
-      value: 
       objectReference: {fileID: 0}
     - target: {fileID: 1461069503072415891, guid: 0887452b5772d8a459d387eeea0f57ab, type: 3}
       propertyPath: GoodColor.a
