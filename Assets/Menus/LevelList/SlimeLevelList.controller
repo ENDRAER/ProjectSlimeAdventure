@@ -29,8 +29,8 @@ AnimatorState:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: SlimeStart
-  m_Speed: 1.5
+  m_Name: ShowUp
+  m_Speed: 1
   m_CycleOffset: 0
   m_Transitions:
   - {fileID: -8314571683494806152}
@@ -44,7 +44,7 @@ AnimatorState:
   m_MirrorParameterActive: 0
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 0
-  m_Motion: {fileID: 7400000, guid: c16e14535bb98464c8011f011d10ae1c, type: 2}
+  m_Motion: {fileID: 7400000, guid: cce68916245a2fa4e859b1dfb52dbace, type: 2}
   m_Tag: 
   m_SpeedParameter: 
   m_MirrorParameter: 
@@ -61,10 +61,10 @@ AnimatorStateMachine:
   m_ChildStates:
   - serializedVersion: 1
     m_State: {fileID: 4074913713181189741}
-    m_Position: {x: 390, y: 180, z: 0}
+    m_Position: {x: 390, y: 200, z: 0}
   - serializedVersion: 1
     m_State: {fileID: -6146352210345887634}
-    m_Position: {x: -10, y: 180, z: 0}
+    m_Position: {x: -10, y: 200, z: 0}
   - serializedVersion: 1
     m_State: {fileID: -7710729153247148964}
     m_Position: {x: 190, y: 100, z: 0}
@@ -74,7 +74,7 @@ AnimatorStateMachine:
   m_StateMachineTransitions: {}
   m_StateMachineBehaviours: []
   m_AnyStatePosition: {x: 210, y: 60, z: 0}
-  m_EntryPosition: {x: 210, y: 160, z: 0}
+  m_EntryPosition: {x: 210, y: 170, z: 0}
   m_ExitPosition: {x: 210, y: 20, z: 0}
   m_ParentStateMachinePosition: {x: 800, y: 20, z: 0}
   m_DefaultState: {fileID: -7710729153247148964}
@@ -85,7 +85,7 @@ AnimatorState:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: SlimeDie
+  m_Name: Hide
   m_Speed: 1
   m_CycleOffset: 0
   m_Transitions:
@@ -99,7 +99,7 @@ AnimatorState:
   m_MirrorParameterActive: 0
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 0
-  m_Motion: {fileID: 7400000, guid: c0bd4d7995e66de4284e303704f6a2fa, type: 2}
+  m_Motion: {fileID: 7400000, guid: 65eec088dcdfb6648bd4bdfbf7bb91eb, type: 2}
   m_Tag: 
   m_SpeedParameter: 
   m_MirrorParameter: 
@@ -165,8 +165,8 @@ AnimatorState:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: SlimeDefaultPose
-  m_Speed: 1
+  m_Name: DefaultPose
+  m_Speed: 1.2
   m_CycleOffset: 0
   m_Transitions:
   - {fileID: -120493532224093520}
@@ -226,7 +226,7 @@ AnimatorStateTransition:
   serializedVersion: 3
   m_TransitionDuration: 0
   m_TransitionOffset: 0
-  m_ExitTime: 0.35
+  m_ExitTime: 1
   m_HasExitTime: 1
   m_HasFixedDuration: 1
   m_InterruptionSource: 0

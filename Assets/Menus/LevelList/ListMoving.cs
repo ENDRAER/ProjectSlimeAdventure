@@ -1,14 +1,14 @@
 using System;
 using System.Collections;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class ListMoving : MonoBehaviour
 {
-    [SerializeField] private Rigidbody m_RB;
     [SerializeField] private GameObject[] LevelsGO;
     [SerializeField] private ListSlimeMoving listSlimeMoving;
-    [NonSerialized] private Vector2 previousTouchPos;
-    [NonSerialized] private int CurentSelectedLevel = 1;
+    [NonSerialized] private int CurentSelectedLevel;
+    [NonSerialized] private Vector2 StartTouchPos;
     [NonSerialized] private bool ScrollKD;
     [NonSerialized] private Coroutine SliceCor;
     [NonSerialized] private float ScrollingSmootness = 0.4f;
@@ -16,7 +16,7 @@ public class ListMoving : MonoBehaviour
 
     private void Awake()
     {
-        Application.targetFrameRate = 60;
+        Application.targetFrameRate = 120;
     }
 
     private void LateUpdate()
@@ -25,40 +25,34 @@ public class ListMoving : MonoBehaviour
         {
             if (Input.touches[0].phase == TouchPhase.Began)
             {
-                if (SliceCor != null)
-                    StopCoroutine(SliceCor);
-                m_RB.velocity = new Vector3();
-                previousTouchPos = Input.touches[0].position;
-            }
-
-            if (Input.touches[0].phase != TouchPhase.Ended)
-            {
-                transform.localPosition += new Vector3((previousTouchPos.x - Input.touches[0].position.x) * Time.deltaTime, 0 , 0);
-                previousTouchPos = Input.touches[0].position;
+                StartTouchPos = Input.touches[0].position;
             }
             if (Input.touches[0].phase == TouchPhase.Ended)
             {
-                m_RB.velocity = new((previousTouchPos.x - Input.touches[0].position.x) * 0.8f, 0, 0);
-                previousTouchPos = Input.touches[0].position;
+                CurentSelectedLevel = Math.Clamp(CurentSelectedLevel + (Input.touches[0].position.x - StartTouchPos.x < 0? -1 : 1), 0, LevelsGO.Length - 1);
+                if (SliceCor != null)
+                    StopCoroutine(SliceCor);
+                SliceCor = StartCoroutine(ScrollToSelectedLevelIE());
             }
         }
 
-        if (Math.Abs(Input.GetAxisRaw("Horizontal")) == 1 && ScrollKD == false)
+        if (Math.Abs(Input.GetAxisRaw("Horizontal")) == 1 && CurentSelectedLevel + (int)Input.GetAxis("Horizontal") >= 0 && CurentSelectedLevel + (int)Input.GetAxis("Horizontal") < LevelsGO.Length && ScrollKD == false)
         {
             CurentSelectedLevel = Math.Clamp(CurentSelectedLevel + (int)Input.GetAxis("Horizontal"), 0, LevelsGO.Length -1);
             if(SliceCor != null)
                 StopCoroutine(SliceCor);
             SliceCor = StartCoroutine(ScrollToSelectedLevelIE());
+            StartCoroutine(ScrollKD_IE());
         }
     }
 
     private IEnumerator ScrollToSelectedLevelIE()
     {
-        StartCoroutine(ScrollKD_IE());
         StartCoroutine(listSlimeMoving.SlimeTranslate(LevelsGO[CurentSelectedLevel].transform.position));
         while (Math.Abs(-2 + LevelsGO[CurentSelectedLevel].transform.position.x - transform.position.x) > 0.1) 
         {
-            transform.position += new Vector3((-2 + LevelsGO[CurentSelectedLevel].transform.position.x - transform.position.x) * ScrollingSmootness * ScrollingSpeed * Time.deltaTime, 0, 0);
+            transform.position += new Vector3((-2 + LevelsGO[CurentSelectedLevel].transform.position.x - transform.position.x) * ScrollingSmootness * ScrollingSpeed * Time.deltaTime, 0, 
+                (-10 + LevelsGO[CurentSelectedLevel].transform.position.z - transform.position.z) * ScrollingSmootness * ScrollingSpeed * Time.deltaTime);
             yield return null;
         }
     }
@@ -66,7 +60,7 @@ public class ListMoving : MonoBehaviour
     private IEnumerator ScrollKD_IE()
     {
         ScrollKD = true;
-        yield return new WaitForSeconds(0.2f);
+        yield return new WaitForSeconds(0.16f);
         ScrollKD = false;
     }
 }

@@ -14,37 +14,34 @@ public class SlimeMoving : MonoBehaviour
 
     void Update()
     {
-        if (m_Animator.GetCurrentAnimatorStateInfo(0).IsName("SlimeDefaultPose"))
+        if (Input.touchCount != 0)
         {
-            if (Input.touchCount != 0)
+            if (Input.touches[0].phase == TouchPhase.Began)
             {
-                if (Input.touches[0].phase == TouchPhase.Began)
+                StartTouchPos = Input.touches[0].position;
+            }
+            if (Input.touches[0].phase == TouchPhase.Ended && !SlimeMoveKD)
+            {
+                float angle = Mathf.Atan2(Input.touches[0].position.x - StartTouchPos.x, Input.touches[0].position.y - StartTouchPos.y) * Mathf.Rad2Deg;
+                switch (angle < 0 ? 360 + angle : angle) 
                 {
-                    StartTouchPos = Input.touches[0].position;
+                    case >= 0 and <= 60:
+                        m_Animator.SetFloat("MoveY", 1);
+                        break;
+                    case > 60 and <= 150:
+                        m_Animator.SetFloat("MoveX", 1);
+                        break;
+                    case > 150 and <= 240:
+                        m_Animator.SetFloat("MoveY", -1);
+                        break;
+                    case > 240 and <= 330:
+                        m_Animator.SetFloat("MoveX", -1);
+                        break;
+                    case > 330 and <= 360:
+                        m_Animator.SetFloat("MoveY", 1);
+                        break;
                 }
-                if (Input.touches[0].phase == TouchPhase.Ended && !SlimeMoveKD)
-                {
-                    float angle = Mathf.Atan2(Input.touches[0].position.x - StartTouchPos.x, Input.touches[0].position.y - StartTouchPos.y) * Mathf.Rad2Deg;
-                    switch (angle < 0 ? 360 + angle : angle) 
-                    {
-                        case >= 0 and <= 60:
-                            m_Animator.SetFloat("MoveY", 1);
-                            break;
-                        case > 60 and <= 150:
-                            m_Animator.SetFloat("MoveX", 1);
-                            break;
-                        case > 150 and <= 240:
-                            m_Animator.SetFloat("MoveY", -1);
-                            break;
-                        case > 240 and <= 330:
-                            m_Animator.SetFloat("MoveX", -1);
-                            break;
-                        case > 330 and <= 360:
-                            m_Animator.SetFloat("MoveY", 1);
-                            break;
-                    }
-                    StartCoroutine(ScrollKD_IE());
-                }
+                StartCoroutine(ScrollKD_IE());
             }
 
             if (((Math.Abs(Input.GetAxisRaw("Horizontal")) == 1 || Math.Abs(Input.GetAxisRaw("Vertical")) == 1) 
