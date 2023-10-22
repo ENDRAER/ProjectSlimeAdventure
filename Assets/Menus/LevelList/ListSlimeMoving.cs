@@ -1,11 +1,28 @@
 using System.Collections;
-using System.Collections.Generic;
+using UnityEngine.SceneManagement;
 using UnityEngine;
 
 public class ListSlimeMoving : MonoBehaviour
 {
+    [SerializeField] private Animator LoadingSplashScreen;
     [SerializeField] private Animator SlineAnim;
     [SerializeField] private GameObject LandingParticles;
+
+    private void Update()
+    {
+        if(Input.GetKeyDown(KeyCode.Space))
+        {
+            StartCoroutine(StartNewScene(1));
+        }
+    }
+
+    public IEnumerator StartNewScene(int scene)
+    {
+        LoadingSplashScreen.SetTrigger("ChangeScene");
+        SlineAnim.SetTrigger("ChangePos");
+        yield return new WaitForSeconds(1);
+        SceneManager.LoadScene(scene);
+    }
 
     public IEnumerator SlimeTranslate(Vector3 Position)
     {

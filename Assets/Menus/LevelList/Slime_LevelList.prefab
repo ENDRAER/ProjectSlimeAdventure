@@ -44,7 +44,7 @@ GameObject:
   - component: {fileID: 7786001959258962387}
   - component: {fileID: 7821992482710356534}
   m_Layer: 0
-  m_Name: SlimeLevelList
+  m_Name: Slime_LevelList
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
