@@ -17,6 +17,9 @@
         },
         {
             "m_Id": "b66157d5e4fc403888815a879da94b54"
+        },
+        {
+            "m_Id": "42e329e0ab214f50bb5e31905d4c01aa"
         }
     ],
     "m_Keywords": [],
@@ -116,6 +119,9 @@
         },
         {
             "m_Id": "a59a4f5460734a20be6420416ceac53e"
+        },
+        {
+            "m_Id": "404de085a30e489daecd4771c2a5dbe9"
         }
     ],
     "m_GroupDatas": [],
@@ -159,6 +165,20 @@
             "m_InputSlot": {
                 "m_Node": {
                     "m_Id": "b3af77e7ea6f41ea8beb9caadcbc63f7"
+                },
+                "m_SlotId": 0
+            }
+        },
+        {
+            "m_OutputSlot": {
+                "m_Node": {
+                    "m_Id": "404de085a30e489daecd4771c2a5dbe9"
+                },
+                "m_SlotId": 0
+            },
+            "m_InputSlot": {
+                "m_Node": {
+                    "m_Id": "e3bdda362d8947dca6dd65e4f9aa3fec"
                 },
                 "m_SlotId": 0
             }
@@ -954,6 +974,21 @@
 {
     "m_SGVersion": 0,
     "m_Type": "UnityEditor.ShaderGraph.Vector1MaterialSlot",
+    "m_ObjectId": "336505ba171a449c94eaf8c16602a4f6",
+    "m_Id": 0,
+    "m_DisplayName": "Smoothness",
+    "m_SlotType": 1,
+    "m_Hidden": false,
+    "m_ShaderOutputName": "Out",
+    "m_StageCapability": 3,
+    "m_Value": 0.0,
+    "m_DefaultValue": 0.0,
+    "m_Labels": []
+}
+
+{
+    "m_SGVersion": 0,
+    "m_Type": "UnityEditor.ShaderGraph.Vector1MaterialSlot",
     "m_ObjectId": "33efe0e9e04c4764922cc431860b4904",
     "m_Id": 3,
     "m_DisplayName": "Delta Time",
@@ -1152,6 +1187,42 @@
 {
     "m_SGVersion": 0,
     "m_Type": "UnityEditor.ShaderGraph.PropertyNode",
+    "m_ObjectId": "404de085a30e489daecd4771c2a5dbe9",
+    "m_Group": {
+        "m_Id": ""
+    },
+    "m_Name": "Property",
+    "m_DrawState": {
+        "m_Expanded": true,
+        "m_Position": {
+            "serializedVersion": "2",
+            "x": -213.0,
+            "y": 502.0,
+            "width": 140.0,
+            "height": 34.0
+        }
+    },
+    "m_Slots": [
+        {
+            "m_Id": "336505ba171a449c94eaf8c16602a4f6"
+        }
+    ],
+    "synonyms": [],
+    "m_Precision": 0,
+    "m_PreviewExpanded": true,
+    "m_DismissedVersion": 0,
+    "m_PreviewMode": 0,
+    "m_CustomColors": {
+        "m_SerializableColors": []
+    },
+    "m_Property": {
+        "m_Id": "42e329e0ab214f50bb5e31905d4c01aa"
+    }
+}
+
+{
+    "m_SGVersion": 0,
+    "m_Type": "UnityEditor.ShaderGraph.PropertyNode",
     "m_ObjectId": "42cccec0aa3b433ab16b4c1398d3b635",
     "m_Group": {
         "m_Id": ""
@@ -1182,6 +1253,34 @@
     },
     "m_Property": {
         "m_Id": "c9faf6a4853c4dfda7c6a2ef6e1ba380"
+    }
+}
+
+{
+    "m_SGVersion": 1,
+    "m_Type": "UnityEditor.ShaderGraph.Internal.Vector1ShaderProperty",
+    "m_ObjectId": "42e329e0ab214f50bb5e31905d4c01aa",
+    "m_Guid": {
+        "m_GuidSerialized": "6ed9e4ff-3ac1-4587-aa80-1cd20b737ae9"
+    },
+    "m_Name": "Smoothness",
+    "m_DefaultRefNameVersion": 1,
+    "m_RefNameGeneratedByDisplayName": "Smoothness",
+    "m_DefaultReferenceName": "_Smoothness",
+    "m_OverrideReferenceName": "",
+    "m_GeneratePropertyBlock": true,
+    "m_UseCustomSlotLabel": false,
+    "m_CustomSlotLabel": "",
+    "m_DismissedVersion": 0,
+    "m_Precision": 0,
+    "overrideHLSLDeclaration": false,
+    "hlslDeclarationOverride": 0,
+    "m_Hidden": false,
+    "m_Value": 0.0,
+    "m_FloatType": 0,
+    "m_RangeValues": {
+        "x": 0.0,
+        "y": 1.0
     }
 }
 
@@ -1943,7 +2042,7 @@
     "m_Hidden": false,
     "m_ShaderOutputName": "Smoothness",
     "m_StageCapability": 2,
-    "m_Value": 0.4000000059604645,
+    "m_Value": 0.0,
     "m_DefaultValue": 0.5,
     "m_Labels": []
 }
@@ -2143,10 +2242,13 @@
             "m_Id": "3176a917ea92442b9c57d9e111fadf5a"
         },
         {
-            "m_Id": "da435491fa9e459495b64f09dca90a42"
+            "m_Id": "b66157d5e4fc403888815a879da94b54"
         },
         {
-            "m_Id": "b66157d5e4fc403888815a879da94b54"
+            "m_Id": "42e329e0ab214f50bb5e31905d4c01aa"
+        },
+        {
+            "m_Id": "da435491fa9e459495b64f09dca90a42"
         },
         {
             "m_Id": "e7f591f629ef4112b211cf1ff881f17f"

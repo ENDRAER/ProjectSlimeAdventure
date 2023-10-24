@@ -1,12 +1,14 @@
 using System;
 using System.Collections;
-using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class ListMoving : MonoBehaviour
 {
     [SerializeField] private GameObject[] LevelsGO;
-    [SerializeField] private ListSlimeMoving listSlimeMoving;
+    [SerializeField] private SlimeListMoving slimeListMoving;
+    [SerializeField] private Animator LoadingSplashScreen;
+    [NonSerialized] private int WhereLevelsStart = 1;
     [NonSerialized] private int CurentSelectedLevel;
     [NonSerialized] private Vector2 StartTouchPos;
     [NonSerialized] private bool ScrollKD;
@@ -44,11 +46,16 @@ public class ListMoving : MonoBehaviour
             SliceCor = StartCoroutine(ScrollToSelectedLevelIE());
             StartCoroutine(ScrollKD_IE());
         }
+
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            StartCoroutine(StartNewScene(CurentSelectedLevel + WhereLevelsStart));
+        }
     }
 
     private IEnumerator ScrollToSelectedLevelIE()
     {
-        StartCoroutine(listSlimeMoving.SlimeTranslate(LevelsGO[CurentSelectedLevel].transform.position));
+        StartCoroutine(slimeListMoving.SlimeTranslate(LevelsGO[CurentSelectedLevel].transform.position));
         while (Math.Abs(-2 + LevelsGO[CurentSelectedLevel].transform.position.x - transform.position.x) > 0.1) 
         {
             transform.position += new Vector3((-2 + LevelsGO[CurentSelectedLevel].transform.position.x - transform.position.x) * ScrollingSmootness * ScrollingSpeed * Time.deltaTime, 0, 
@@ -62,5 +69,13 @@ public class ListMoving : MonoBehaviour
         ScrollKD = true;
         yield return new WaitForSeconds(0.16f);
         ScrollKD = false;
+    }
+
+    public IEnumerator StartNewScene(int scene)
+    {
+        LoadingSplashScreen.SetTrigger("ChangeScene"); 
+        StartCoroutine(slimeListMoving.SlimeTranslate(-50 * Vector3.one));
+        yield return new WaitForSeconds(1);
+        SceneManager.LoadScene(scene);
     }
 }
