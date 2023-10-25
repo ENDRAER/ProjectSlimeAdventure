@@ -55,7 +55,7 @@ public class ListMoving : MonoBehaviour
 
     private IEnumerator ScrollToSelectedLevelIE()
     {
-        StartCoroutine(slimeListMoving.SlimeTranslate(LevelsGO[CurentSelectedLevel].transform.position));
+        StartCoroutine(slimeListMoving.SlimeTranslate(LevelsGO[CurentSelectedLevel].transform.position, CurentSelectedLevel));
         while (Math.Abs(-2 + LevelsGO[CurentSelectedLevel].transform.position.x - transform.position.x) > 0.1) 
         {
             transform.position += new Vector3((-2 + LevelsGO[CurentSelectedLevel].transform.position.x - transform.position.x) * ScrollingSmootness * ScrollingSpeed * Time.deltaTime, 0, 
@@ -74,7 +74,7 @@ public class ListMoving : MonoBehaviour
     public IEnumerator StartNewScene(int scene)
     {
         LoadingSplashScreen.SetTrigger("ChangeScene"); 
-        StartCoroutine(slimeListMoving.SlimeTranslate(-50 * Vector3.one));
+        StartCoroutine(slimeListMoving.SlimeTranslate(-50 * Vector3.one, 1));
         yield return new WaitForSeconds(1);
         SceneManager.LoadScene(scene);
     }
