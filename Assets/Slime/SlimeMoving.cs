@@ -14,6 +14,7 @@ public class SlimeMoving : MonoBehaviour
 
     void Update()
     {
+        #region Touch
         if (Input.touchCount != 0)
         {
             if (Input.touches[0].phase == TouchPhase.Began)
@@ -43,14 +44,15 @@ public class SlimeMoving : MonoBehaviour
                 }
                 StartCoroutine(ScrollKD_IE());
             }
+        }
+        #endregion
 
-            if (((Math.Abs(Input.GetAxisRaw("Horizontal")) == 1 || Math.Abs(Input.GetAxisRaw("Vertical")) == 1) 
-                && fieldGrid.MovingGrid[(int)transform.position.x + 50 + (int)Input.GetAxisRaw("Horizontal"), (int)transform.position.z + 50 + (int)Input.GetAxisRaw("Vertical")] != null) && !SlimeMoveKD)
-            {
-                StartCoroutine(ScrollKD_IE());
-                m_Animator.SetFloat("MoveX", Input.GetAxisRaw("Horizontal"));
-                m_Animator.SetFloat("MoveY", Input.GetAxisRaw("Vertical"));
-            }
+        if (((Math.Abs(Input.GetAxisRaw("Horizontal")) == 1 || Math.Abs(Input.GetAxisRaw("Vertical")) == 1)
+            && fieldGrid.MovingGrid[(int)transform.position.x + 50 + (int)Input.GetAxisRaw("Horizontal"), (int)transform.position.z + 50 + (int)Input.GetAxisRaw("Vertical")] != null) && !SlimeMoveKD)
+        {
+            StartCoroutine(ScrollKD_IE());
+            m_Animator.SetFloat("MoveX", Input.GetAxisRaw("Horizontal"));
+            m_Animator.SetFloat("MoveY", Input.GetAxisRaw("Vertical"));
         }
     }
 

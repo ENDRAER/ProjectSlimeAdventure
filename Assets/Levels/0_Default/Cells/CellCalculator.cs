@@ -53,8 +53,7 @@ public class CellCalculator : CellParameters
     public override void LandingBehaviour(GameObject SlimeGO)
     {
         Steps steps = SlimeGO.GetComponent<Steps>();
-        steps.CurentSteps = Math.Max((int)(new DataTable().Compute(steps.CurentSteps.ToString() + calculatorChanged, "")) - 1, 0);
+        steps.ChangeStepsCount(Math.Max((int)(new DataTable().Compute(steps.CurentSteps.ToString() + calculatorChanged, "")) - 1, 0));
         ClearText();
-        StartCoroutine(steps.SizeChangerBySteps());
     }
 }
