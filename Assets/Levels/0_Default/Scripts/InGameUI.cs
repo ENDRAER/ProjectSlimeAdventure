@@ -1,10 +1,13 @@
+using System.Collections;
 using TMPro;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class InGameUI : MonoBehaviour
 {
     [SerializeField] private TextMeshProUGUI StepCounter;
     [SerializeField] private GameObject DiferenceStepsCounter;
+    [SerializeField] private Animator LoadingSplashScreen;
 
 
     public void ChangeStepCounter(int oldValue, int newValue)

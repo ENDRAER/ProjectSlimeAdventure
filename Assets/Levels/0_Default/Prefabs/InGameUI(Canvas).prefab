@@ -378,9 +378,9 @@ RectTransform:
   - {fileID: 8237750162560560209}
   m_Father: {fileID: 5127605288788559175}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -391.2}
+  m_AnchorMin: {x: 0.5, y: 0}
+  m_AnchorMax: {x: 0.5, y: 0}
+  m_AnchoredPosition: {x: 0, y: 58.799988}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &3622599536879405563
@@ -464,7 +464,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1903950681798473589}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 8180009597746446293}
+        m_TargetAssemblyTypeName: SceneChanger, Assembly-CSharp
+        m_MethodName: StartCorutineSceneCHanger
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &7220625588905875562
 GameObject:
   m_ObjectHideFlags: 0
@@ -478,6 +490,7 @@ GameObject:
   - component: {fileID: 8426126318728856745}
   - component: {fileID: 2940435046839947582}
   - component: {fileID: 5406935083638270678}
+  - component: {fileID: 8180009597746446293}
   m_Layer: 0
   m_Name: InGameUI(Canvas)
   m_TagString: Untagged
@@ -583,6 +596,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   StepCounter: {fileID: 351777682575834943}
   DiferenceStepsCounter: {fileID: 5010131314036119631, guid: 7fe0ae025c4e69e4fae1694eaf306e6d, type: 3}
+  LoadingSplashScreen: {fileID: 0}
+--- !u!114 &8180009597746446293
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7220625588905875562}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 43cd3bf4ad5a4ea49bad7065890889fd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  LoadingSplashScreen: {fileID: 0}
 --- !u!1 &8913832199863693620
 GameObject:
   m_ObjectHideFlags: 0

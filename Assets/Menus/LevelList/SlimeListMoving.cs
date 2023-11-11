@@ -1,5 +1,4 @@
 using System.Collections;
-using UnityEngine.SceneManagement;
 using UnityEngine;
 
 public class SlimeListMoving : MonoBehaviour
@@ -13,7 +12,7 @@ public class SlimeListMoving : MonoBehaviour
     public IEnumerator SlimeTranslate(Vector3 position, int selectedLevel)
     {
         SlineAnim.SetTrigger("ChangePos");
-        yield return new WaitForSeconds(0.16f);
+        yield return new WaitForSeconds(0.166f);
         SlineAnim.transform.position = position;
         CakeImage.material.SetFloat("_GrayscaleAmount", PlayerPrefs.GetInt(selectedLevel + "Cake"));
         CoinImage.material.SetFloat("_GrayscaleAmount", PlayerPrefs.GetInt(selectedLevel + "Coin"));

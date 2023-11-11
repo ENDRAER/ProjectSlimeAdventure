@@ -7,7 +7,7 @@ public class ListMoving : MonoBehaviour
 {
     [SerializeField] private GameObject[] LevelsGO;
     [SerializeField] private SlimeListMoving slimeListMoving;
-    [SerializeField] private Animator LoadingSplashScreen;
+    [SerializeField] private SceneChanger sceneChanger;
     [NonSerialized] private int WhereLevelsStart = 1;
     [NonSerialized] private int CurentSelectedLevel;
     [NonSerialized] private Vector2 StartTouchPos;
@@ -49,7 +49,8 @@ public class ListMoving : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.Space))
         {
-            StartCoroutine(StartNewScene(CurentSelectedLevel + WhereLevelsStart));
+            StartCoroutine(sceneChanger.StartNewScene(CurentSelectedLevel + WhereLevelsStart));
+            StartCoroutine(slimeListMoving.SlimeTranslate(-50 * Vector3.one, 1));
         }
     }
 
@@ -69,13 +70,5 @@ public class ListMoving : MonoBehaviour
         ScrollKD = true;
         yield return new WaitForSeconds(0.16f);
         ScrollKD = false;
-    }
-
-    public IEnumerator StartNewScene(int scene)
-    {
-        LoadingSplashScreen.SetTrigger("ChangeScene"); 
-        StartCoroutine(slimeListMoving.SlimeTranslate(-50 * Vector3.one, 1));
-        yield return new WaitForSeconds(1);
-        SceneManager.LoadScene(scene);
     }
 }
