@@ -4,11 +4,15 @@ using UnityEngine;
 
 public class Ass : MonoBehaviour
 {
-    public GameObject AssGameObject;
+    public Transform target; 
+    public float smoothSpeed = 0.125f;
 
-    void Update()
+    public Vector3 offset = new Vector3(0, 5, -10);
+
+    void LateUpdate()
     {
-        Vector3 a = AssGameObject.transform.position;
-        transform.position = new Vector3(a.x - 0.88f, a.y + 17.82f, a.z - 12.59f);
+        Vector3 desiredPosition = new Vector3(target.position.x + offset.x, offset.y, target.position.z + offset.z);
+        Vector3 smoothedPosition = Vector3.Lerp(transform.position, desiredPosition, smoothSpeed);
+        transform.position = smoothedPosition;
     }
 }

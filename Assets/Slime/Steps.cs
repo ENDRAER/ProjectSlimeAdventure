@@ -24,7 +24,7 @@ public class Steps : MonoBehaviour
         GameObject Particles = Instantiate(LandingParticles, transform.position, Quaternion.identity);
         Particles.transform.localScale = (Vector3.one * MinParticleScale) + (Vector3.one * Mathf.Min(CurentSteps * ScaleParticleMod, MaxParticleScale));
 
-        float speedScaler = ((MinScale - ScaleMod) + ScaleMod * CurentSteps) - m_MeshScalerGO.transform.localScale.x;
+        float speedScaler = (MinScale + ScaleMod * CurentSteps) - m_MeshScalerGO.transform.localScale.x;
         float targetSize = Mathf.Min(m_MeshScalerGO.transform.localScale.x + speedScaler, MaxScale);
 
         while ((m_MeshScalerGO.transform.localScale.x > targetSize && speedScaler < 0) || (m_MeshScalerGO.transform.localScale.x < targetSize && speedScaler > 0))

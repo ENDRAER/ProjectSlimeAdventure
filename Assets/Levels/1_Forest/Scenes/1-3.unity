@@ -5280,7 +5280,7 @@ Transform:
   m_GameObject: {fileID: 218022051}
   serializedVersion: 2
   m_LocalRotation: {x: -0.0000000074505797, y: -0.0000000037252899, z: -0.00000004051253, w: 1}
-  m_LocalPosition: {x: 0.0271, y: -0.0781, z: 0.0502}
+  m_LocalPosition: {x: 0.0272, y: -0.0796, z: 0.0519}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 1
   m_Children: []
@@ -28084,7 +28084,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eeae3d370be236d47869a466e12fa36b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  AssGameObject: {fileID: 757651346}
+  target: {fileID: 757651347}
+  smoothSpeed: 0.125
+  offset: {x: 1.1, y: 17.9, z: -12.48}
 --- !u!1 &971602118
 GameObject:
   m_ObjectHideFlags: 0
@@ -28485,6 +28487,9 @@ PrefabInstance:
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 9050023416032916533, guid: 00bb708e6c346cb41935144778baa715, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 981576683}
     - targetCorrespondingSourceObject: {fileID: 3988111171876802534, guid: 00bb708e6c346cb41935144778baa715, type: 3}
       insertIndex: -1
       addedObject: {fileID: 169397314}
@@ -28494,6 +28499,27 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 8778024337871319821, guid: 00bb708e6c346cb41935144778baa715, type: 3}
   m_PrefabInstance: {fileID: 981576681}
   m_PrefabAsset: {fileID: 0}
+--- !u!95 &981576683
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 348509363}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: cfe9339e03c0b9b4887a754cb8dda1f4, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &986834933
 GameObject:
   m_ObjectHideFlags: 0

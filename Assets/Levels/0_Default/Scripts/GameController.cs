@@ -7,10 +7,6 @@ public class GameController : MonoBehaviour
     [SerializeField] private GameObject SlimeGO;
     [SerializeField] private Animator SlimeAnimator;
 
-    private void Awake()
-    {
-        
-    }
 
     public IEnumerator OnSlimeDie()
     {
