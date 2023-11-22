@@ -131,6 +131,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 21fcf032cad2c4e49a14a533ae2d86d3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  m_Animator: {fileID: 3569001248562761530}
   InGameUI: {fileID: 0}
   WinScreen: {fileID: 0}
 --- !u!95 &3569001248562761530
@@ -141,7 +142,7 @@ Animator:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3085332735301958155}
-  m_Enabled: 1
+  m_Enabled: 0
   m_Avatar: {fileID: 0}
   m_Controller: {fileID: 9100000, guid: cfe9339e03c0b9b4887a754cb8dda1f4, type: 2}
   m_CullingMode: 0
