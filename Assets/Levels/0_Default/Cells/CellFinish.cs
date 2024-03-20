@@ -10,7 +10,7 @@ public class CellFinish : CellParameters
     public override void LandingBehaviour(GameObject SlimeGO)
     {
         m_Animator.enabled = true;
-        PlayerPrefs.SetInt(SceneManager.sceneCount - 1 + "Cake", 1);
+        PlayerPrefs.SetInt((SceneManager.GetActiveScene().buildIndex - 1) + "Cake", 1);
         InGameUI.SetActive(false);
         WinScreen.SetActive(true);
     }
